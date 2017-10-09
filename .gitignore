@@ -1,0 +1,6 @@
+# -*- mode: conf; -*-
+
+# Backup files:
+*~
+
+soas.log*

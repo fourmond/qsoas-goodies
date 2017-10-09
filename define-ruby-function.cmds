@@ -1,0 +1,19 @@
+ruby
+def my_func(x, vm, km)
+  return vm/(1 + km/x)
+end
+ruby end
+eval my_func(1.0,1.0,1.0)
+eval my_func(1e4,1.0,1.0)
+
+generate-buffer 0 10 my_func(x,3.0,0.6)
+fit-arb my_func(x,vm,km)
+
+ruby
+def my_func(x, vm, km)
+  return vm/(1 + km/x**2)
+end
+ruby end
+
+generate-buffer 0 10 my_func(x,1.0,0.6)
+fit-arb my_func(x,vm,km)
